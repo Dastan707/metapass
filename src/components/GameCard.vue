@@ -56,6 +56,9 @@ export default {
 <style lang="scss" scoped>
 .cards-list{
     display: flex;
+    margin-left: -150px;
+    position: relative;
+    z-index: 1;
 }
 .card{
     margin: 20px 15px 0px 15px;

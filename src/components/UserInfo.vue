@@ -44,6 +44,8 @@ export default {
 
 <style lang="scss" scoped>
 .card{
+    position: relative;
+    z-index: 2;
     width: 300px;
     height: 100%;
     background-color: #272A2E;
