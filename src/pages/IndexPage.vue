@@ -5,7 +5,7 @@
         <img src="../assets/coin-icon.svg" alt="icon">
         <img src="../assets/message-icon.svg" alt="icon">
     </div>
-    <div>
+    <div class="main-user">
       <UserInfo />
     </div>
     <div class="main-right_bar">
@@ -16,7 +16,7 @@
       <h4>Game</h4>
       <h4>Portfolio</h4>
       <div class="main-select_arrows">
-        <img src="../assets/arrow-left.svg" alt="arrowLeft">
+        <img @click="leftArrow" src="../assets/arrow-left.svg" alt="arrowLeft">
         <img src="../assets/arrow-right.svg" alt="arrowRight">
       </div>
     </div>
@@ -39,7 +39,16 @@ export default defineComponent({
     CarouselBar,
     GameCard
   },
-  name: 'IndexPage'
+  name: 'IndexPage',
+  methods: {
+    leftArrow () {
+      console.log('hello')
+    }
+  },
+  async mounted () {
+    await this.$store.dispatch('getUserInfo')
+    await this.$store.dispatch('getGamesInfo')
+  }
 })
 </script>
 <style lang="scss" scoped>
@@ -73,6 +82,13 @@ export default defineComponent({
     margin-top: 10px;
     h4{
       margin: 0px 0px 0px 10px;
+      font-family: $aven-font-family;
+      font-style: normal;
+      font-weight: 700;
+    }
+    h4:nth-child(2){
+      color: #BC1F6F;
+      filter: drop-shadow(0 0 0.75rem #BC1F6F);
     }
     &_arrows{
       margin-left: 20px;

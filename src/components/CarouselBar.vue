@@ -3,9 +3,13 @@
       animated
       v-model="slide"
       infinite
+      :autoplay="autoplay"
       class="carousel"
     >
       <q-carousel-slide :name="1" img-src="../assets/carousel.jpg" />
+      <q-carousel-slide :name="2" img-src="https://cdn.quasar.dev/img/parallax1.jpg" />
+      <q-carousel-slide :name="3" img-src="https://cdn.quasar.dev/img/mountains.jpg" />
+
     </q-carousel>
     <div class="carousel-arrows">
         <p class="carousel-arrows_item"></p>
@@ -20,7 +24,8 @@ export default {
   name: 'CarouselBar',
   setup () {
     return {
-      slide: ref(1)
+      slide: ref(1),
+      autoplay: ref(true)
     }
   }
 }

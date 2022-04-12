@@ -1,164 +1,55 @@
 <template>
   <div class="cards-list">
-    <q-card class="card">
+    <q-card class="card" v-for="game in games" :key="game.id">
       <img src="../assets/card-img.svg">
-
       <q-card-section class="card-section">
-        <div class="card-title">The sandbox</div>
-        <div class="card-info">
+        <div class="card-title">{{game.name}}</div>
+        <div class="card-info" v-for="item in game.stats" :key="item.id">
             <div class="card-info_name">
-            <q-icon name="arrow_circle_up" size="15px" class="icon-up" />
-            <p>Earnings</p>
+            <q-icon
+              v-if="item.status == 'positive'"
+              name="arrow_circle_up"
+              size="15px"
+              class="icon-up"
+            />
+            <q-icon
+              v-else-if="item.status == 'negative'"
+              name="arrow_circle_down"
+              size="15px"
+              class="icon-down"
+            />
+            <p>{{item.title}}</p>
             </div>
-            <p class="card-info_stats positive">$ 1200.00</p>
-        </div>
-        <div class="card-info">
-            <div class="card-info_name">
-            <q-icon name="arrow_circle_down" size="15px" class="icon-down" />
-            <p>Number of NFT</p>
-            </div>
-            <p class="card-info_stats negative">11</p>
-        </div>
-        <div class="card-info">
-            <div class="card-info_name">
-            <q-icon name="arrow_circle_down" size="15px" class="icon-down" />
-            <p>NFT Total Price</p>
-            </div>
-            <p class="card-info_stats negative">$ 3400.00</p>
-        </div>
-        <div class="card-info">
-            <div class="card-info_name">
-            <q-icon name="arrow_circle_up" size="15px" class="icon-up" />
-            <p>In-game Token</p>
-            </div>
-            <p class="card-info_stats positive">1850</p>
-        </div>
-        <div class="card-info">
-            <div class="card-info_name">
-            <q-icon name="arrow_circle_down" size="15px" class="icon-down" />
-            <p>Ranking</p>
-            </div>
-            <p class="card-info_stats negative">63</p>
-        </div>
-        <div class="card-info">
-            <div class="card-info_name">
-            <q-icon name="arrow_circle_up" size="15px" class="icon-up" />
-            <p>Hours played</p>
-            </div>
-            <p class="card-info_stats negative">758</p>
+            <p
+              class="card-info_stats"
+              v-if="item.status == 'positive'"
+              v-bind:class="'positive'"
+            >
+              {{item.num}}
+            </p>
+            <p
+              class="card-info_stats"
+              v-else-if="item.status == 'negative'"
+              v-bind:class="'negative'"
+            >
+              {{item.num}}
+            </p>
         </div>
       </q-card-section>
 
     </q-card>
-
-    <q-card class="card">
-      <img src="../assets/card-img2.svg">
-
-      <q-card-section class="card-section">
-        <div class="card-title">Splinter Lands</div>
-        <div class="card-info">
-            <div class="card-info_name">
-            <q-icon name="arrow_circle_up" size="15px" class="icon-up" />
-            <p>Earnings</p>
-            </div>
-            <p class="card-info_stats positive">$ 1200.00</p>
-        </div>
-        <div class="card-info">
-            <div class="card-info_name">
-            <q-icon name="arrow_circle_down" size="15px" class="icon-down" />
-            <p>Number of NFT</p>
-            </div>
-            <p class="card-info_stats negative">11</p>
-        </div>
-        <div class="card-info">
-            <div class="card-info_name">
-            <q-icon name="arrow_circle_down" size="15px" class="icon-down" />
-            <p>NFT Total Price</p>
-            </div>
-            <p class="card-info_stats negative">$ 3400.00</p>
-        </div>
-        <div class="card-info">
-            <div class="card-info_name">
-            <q-icon name="arrow_circle_up" size="15px" class="icon-up" />
-            <p>In-game Token</p>
-            </div>
-            <p class="card-info_stats positive">1850</p>
-        </div>
-        <div class="card-info">
-            <div class="card-info_name">
-            <q-icon name="arrow_circle_down" size="15px" class="icon-down" />
-            <p>Ranking</p>
-            </div>
-            <p class="card-info_stats negative">63</p>
-        </div>
-        <div class="card-info">
-            <div class="card-info_name">
-            <q-icon name="arrow_circle_up" size="15px" class="icon-up" />
-            <p>Hours played</p>
-            </div>
-            <p class="card-info_stats negative">758</p>
-        </div>
-      </q-card-section>
-
-    </q-card>
-
-    <q-card class="card">
-      <img src="../assets/card-img3.svg">
-
-      <q-card-section class="card-section">
-        <div class="card-title">Axie infinity</div>
-        <div class="card-info">
-            <div class="card-info_name">
-            <q-icon name="arrow_circle_up" size="15px" class="icon-up" />
-            <p>Earnings</p>
-            </div>
-            <p class="card-info_stats positive">$ 1200.00</p>
-        </div>
-        <div class="card-info">
-            <div class="card-info_name">
-            <q-icon name="arrow_circle_down" size="15px" class="icon-down" />
-            <p>Number of NFT</p>
-            </div>
-            <p class="card-info_stats negative">11</p>
-        </div>
-        <div class="card-info">
-            <div class="card-info_name">
-            <q-icon name="arrow_circle_down" size="15px" class="icon-down" />
-            <p>NFT Total Price</p>
-            </div>
-            <p class="card-info_stats negative">$ 3400.00</p>
-        </div>
-        <div class="card-info">
-            <div class="card-info_name">
-            <q-icon name="arrow_circle_up" size="15px" class="icon-up" />
-            <p>In-game Token</p>
-            </div>
-            <p class="card-info_stats positive">1850</p>
-        </div>
-        <div class="card-info">
-            <div class="card-info_name">
-            <q-icon name="arrow_circle_down" size="15px" class="icon-down" />
-            <p>Ranking</p>
-            </div>
-            <p class="card-info_stats negative">63</p>
-        </div>
-        <div class="card-info">
-            <div class="card-info_name">
-            <q-icon name="arrow_circle_up" size="15px" class="icon-up" />
-            <p>Hours played</p>
-            </div>
-            <p class="card-info_stats negative">758</p>
-        </div>
-      </q-card-section>
-
-    </q-card>
-
   </div>
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 export default {
-  name: 'GameCard'
+  name: 'GameCard',
+  computed: {
+    ...mapGetters({
+      games: 'games'
+    })
+  }
 }
 </script>
 
@@ -167,13 +58,13 @@ export default {
     display: flex;
 }
 .card{
-    margin: 0px 15px 0px 15px;
+    margin: 20px 15px 0px 15px;
     background-color: #1E2026;
     width: 280px;
     height: 430px;
     border-radius: 10px;
     color: #ffff;
-    margin-top: 20px;
+
     p{
        margin: 0;
     }
@@ -181,6 +72,8 @@ export default {
         display: flex;
         flex-direction: column;
         align-items: center;
+        font-family: $stellar-font-family;
+        font-style: normal;
     }
     &-title{
         width: 230px;
@@ -189,7 +82,9 @@ export default {
         border-radius: 5px;
         text-transform: uppercase;
         text-align: center;
-        padding: 5px;
+        padding: 3px;
+        font-size: 18px;
+        font-weight: 400;
     }
     .icon-up{
         color: #249BB6;
@@ -205,6 +100,7 @@ export default {
         justify-content: space-between;
         width: 230px;
         margin-top: 10px;
+        font-size: 14px;
         &_name{
             display: flex;
             align-items: center;

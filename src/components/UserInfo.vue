@@ -1,31 +1,27 @@
 <template>
-  <div class="card">
+  <div class="card" v-for="card in user" :key="card.id">
       <div class="card-image">
           <img src="../assets/image.svg" alt="img">
       </div>
       <div class="card-user_name">
-      <h4>Player_001</h4>
+      <h4>{{card.nickname}}</h4>
       </div>
       <p class="card-user_info">
-          Player short bio info Lorem ipsum dolor sit, amet consectetur adipisicing elit. Impedit, atque!
+          {{card.description}}
       </p>
       <div class="card-user_skills">
-        <p>Player</p>
-        <p>Coach</p>
-        <p>NFT artist</p>
+        <p v-for="skill in card.skills" :key="skill.id">{{skill}}</p>
       </div>
       <hr>
-      <div class="card-user_status">
-          <p>In search for game</p>
-          <p>Rents out of NFT</p>
-          <p>Rents NFT</p>
+      <div class="card-user_status" >
+          <p v-for="status in card.state" :key="status.id">{{status}}</p>
       </div>
       <div class="card-user_guild">
           <span>
               <p>Guild</p>
           </span>
           <span>
-            <p>Nova Guild Games</p>
+            <p>{{card.guild.name}}</p>
           </span>
       </div>
       <div class="card-footer">
@@ -35,8 +31,14 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 export default {
-  name: 'UserInfo'
+  name: 'UserInfo',
+  computed: {
+    ...mapGetters({
+      user: 'user'
+    })
+  }
 }
 </script>
 
@@ -45,26 +47,36 @@ export default {
     width: 300px;
     height: 100%;
     background-color: #272A2E;
-    // box-shadow: 0px 3.24324px 20.2703px rgba(0, 0, 0, 0.1);
     color: white;
     border-radius: 13px;
     padding: 10px 15px;
     display: flex;
     flex-direction: column;
+    box-shadow: 0px 3.24324px 20.2703px rgba(0, 0, 0, 0.1);
     &-image{
         display: flex;
         justify-content: center;
         img{
-            border-radius: 20px;
+            border-radius: 15px;
             width: 270px;
-            height: 250px;
+            height: 265px;
         }
     }
     &-user{
         &_name{
             h4{
               margin: 20px 0px;
+              font-family: $aven-font-family;
+              font-weight: 700;
+              font-style: normal;
+              font-size: 30px;
             }
+        }
+        &_info{
+            font-family: $stellar-font-family;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 15px;
         }
         &_skills{
             display: flex;
@@ -72,11 +84,15 @@ export default {
             p{
                 width: 70px;
                 height: 23px;
-                border-radius: 10px;
                 background-color: #BC1F6F;
                 border-radius: 20px;
                 text-align: center;
                 text-transform: uppercase;
+                font-family: $stellar-font-family;
+                font-style: normal;
+                font-weight: 400;
+                font-size: 15px;
+                padding: 2px 2px 0px 3px;
             }
         }
         &_skills p:nth-child(2){
@@ -99,22 +115,34 @@ export default {
                 border-radius: 10px;
                 text-transform: uppercase;
                 margin-bottom: 10px;
+                font-family: $stellar-font-family;
+                font-style: normal;
+                font-weight: 400;
+                font-size: 15px;
+                padding-top: 1px;
             }
         }
         &_guild{
             margin-top: 50px;
             display: flex;
             align-items: center;
+            span > p{
+                font-family: $stellar-font-family;
+                font-style: normal;
+                font-weight: 400;
+                font-size: 15px;
+            }
         }
         &_guild > span:nth-child(1){
             p{
                 width: 70px;
                 background-color: #272A2E;
                 border: 1px solid white;
-                border-radius: 10px;
+                border-radius: 15px;
                 text-transform: uppercase;
                 text-align: center;
                 margin-right: 10px;
+                padding: 2px 0px 0px 2px;
             }
         }
     }
