@@ -12,9 +12,9 @@
 
     </q-carousel>
     <div class="carousel-arrows">
-        <p class="carousel-arrows_item"></p>
-        <p class="carousel-arrows_item"></p>
-        <p class="carousel-arrows_item"></p>
+        <p class="carousel-arrows_item" id="one"></p>
+        <p class="carousel-arrows_item" id="two"></p>
+        <p class="carousel-arrows_item" id="three"></p>
     </div>
 </template>
 
@@ -26,6 +26,27 @@ export default {
     return {
       slide: ref(1),
       autoplay: ref(true)
+    }
+  },
+  mounted () {
+    const elementOne = document.getElementById('one')
+    if (this.slide === 1) {
+      elementOne.classList.add('active')
+    }
+  },
+  updated () {
+    const elementOne = document.getElementById('one')
+    const elementTwo = document.getElementById('two')
+    const elementThree = document.getElementById('three')
+    if (this.slide === 1) {
+      elementThree.classList.remove('active')
+      elementOne.classList.add('active')
+    } else if (this.slide === 2) {
+      elementOne.classList.remove('active')
+      elementTwo.classList.add('active')
+    } else if (this.slide === 3) {
+      elementTwo.classList.remove('active')
+      elementThree.classList.add('active')
     }
   }
 }
@@ -49,13 +70,12 @@ export default {
             display: flex;
             align-items: flex-end;
         }
-        &_item:first-child{
-            width: 90px;
-            height: 5px;
-            background-color: #249BB6;
-            border-radius: 10px;
-        }
     }
 }
-
+.active{
+  width: 90px;
+  height: 5px;
+  background-color: #249BB6;
+  border-radius: 10px;
+}
 </style>

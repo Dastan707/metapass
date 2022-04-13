@@ -21,7 +21,7 @@
               <p>Guild</p>
           </span>
           <span>
-            <p>{{card.guild.name}}</p>
+            <p>{{card.guild}}</p>
           </span>
       </div>
       <div class="card-footer">
@@ -54,7 +54,6 @@ export default {
     padding: 10px 15px;
     display: flex;
     flex-direction: column;
-    box-shadow: 0px 3.24324px 20.2703px rgba(0, 0, 0, 0.1);
     &-image{
         display: flex;
         justify-content: center;

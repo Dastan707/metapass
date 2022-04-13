@@ -12,17 +12,19 @@
     <div class="main-carousel">
       <CarouselBar />
     </div>
-    <div class="main-select">
+    <!-- <div class="main-select">
       <h4>Game</h4>
       <h4>Portfolio</h4>
       <div class="main-select_arrows">
         <img @click="leftArrow" src="../assets/arrow-left.svg" alt="arrowLeft">
-        <img src="../assets/arrow-right.svg" alt="arrowRight">
+        <img @click="rightArrow" src="../assets/arrow-right.svg" alt="arrowRight">
       </div>
-    </div>
+    </div> -->
     <div class="main-cards">
       <GameCard />
     </div>
+  <div class="content"></div>
+
     </div>
   </div>
 </template>
@@ -34,15 +36,25 @@ import UserInfo from 'src/components/UserInfo.vue'
 import { defineComponent } from 'vue'
 
 export default defineComponent({
+  name: 'IndexPage',
   components: {
     UserInfo,
     CarouselBar,
     GameCard
   },
-  name: 'IndexPage',
+  data () {
+    return {
+      currentSlideIndex: 0
+    }
+  },
   methods: {
+    rightArrow () {
+      if (this.currentSlideIndex > 0) {
+        this.currentSlideIndex--
+      }
+    },
     leftArrow () {
-      console.log('hello')
+      this.currentSlideIndex++
     }
   },
   async mounted () {
@@ -52,6 +64,15 @@ export default defineComponent({
 })
 </script>
 <style lang="scss" scoped>
+.content{
+  background: linear-gradient(90deg, #12151D 0%, rgba(18, 21, 29, 0) 100%);
+  position: absolute;
+  width: 300px;
+  height: 450px;
+  z-index: 1;
+  left: 372px;
+  top: 510px;
+}
 .main{
   display: flex;
   padding: 0px 0px 20px 30px;

@@ -41,6 +41,17 @@
             {"title": "Ranking", "num": "63", "status": "negative"},
             {"title": "Hours played", "num": "758", "status": "positive"}
         ]    
-    }
+    },
+    {
+      "name": "The Sandbox",
+      "stats": [
+          {"title": "Earnings", "num": "$ 1200.00", "status": "positive"},
+          {"title": "Number of NFT", "num": "11", "status": "negative"},
+          {"title": "NFT total price", "num": "$ 3400.00", "status": "negative"},
+          {"title": "In-game token", "num": "1850", "status": "positive"},
+          {"title": "Ranking", "num": "63", "status": "negative"},
+          {"title": "Hours played", "num": "758", "status": "positive"}
+      ]    
+  }
   ]
 }

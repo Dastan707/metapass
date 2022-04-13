@@ -1,5 +1,14 @@
 <template>
-  <div class="cards-list">
+<div>
+<div class="select">
+  <h4>Game</h4>
+  <h4>Portfolio</h4>
+  <div class="select_arrows">
+    <img @click="leftArrow" src="../assets/arrow-left.svg" alt="arrowLeft">
+    <img @click="rightArrow" src="../assets/arrow-right.svg" alt="arrowRight">
+  </div>
+</div>
+  <div class="cards-list" :style="{ 'margin-left': '-' + (150 * currentSlideIndex) + 'px'}">
     <q-card class="card" v-for="game in games" :key="game.id">
       <img src="../assets/card-img.svg">
       <q-card-section class="card-section">
@@ -36,8 +45,8 @@
             </p>
         </div>
       </q-card-section>
-
     </q-card>
+  </div>
   </div>
 </template>
 
@@ -45,6 +54,24 @@
 import { mapGetters } from 'vuex'
 export default {
   name: 'GameCard',
+  data () {
+    return {
+      currentSlideIndex: 0
+    }
+  },
+  methods: {
+    rightArrow () {
+      if (this.currentSlideIndex > 0) {
+        this.currentSlideIndex--
+      }
+    },
+    leftArrow () {
+      console.log(this.currentSlideIndex)
+      if (this.currentSlideIndex <= 1) {
+        this.currentSlideIndex++
+      }
+    }
+  },
   computed: {
     ...mapGetters({
       games: 'games'
@@ -54,20 +81,45 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.select{
+    color: #ffff;
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    h4{
+      margin: 0px;
+      font-family: $aven-font-family;
+      font-style: normal;
+      font-weight: 700;
+    }
+    h4:nth-child(2){
+      color: #BC1F6F;
+      filter: drop-shadow(0 0 0.75rem #BC1F6F);
+      margin-left: 10px;
+    }
+    &_arrows{
+      margin-left: 20px;
+      display: flex;
+      align-items: center;
+      img{
+        width: 25px;
+        margin-left: 10px;
+      }
+    }
+  }
 .cards-list{
     display: flex;
-    margin-left: -150px;
-    position: relative;
-    z-index: 1;
+    transition: all ease .5s;
+    overflow: hidden;
 }
 .card{
-    margin: 20px 15px 0px 15px;
+    margin: 35px 15px 0px 0px;
     background-color: #1E2026;
     width: 280px;
     height: 430px;
     border-radius: 10px;
     color: #ffff;
-
+    position: relative;
     p{
        margin: 0;
     }
