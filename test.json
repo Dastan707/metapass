@@ -53,5 +53,22 @@
           {"title": "Hours played", "num": "758", "status": "positive"}
       ]    
   }
-  ]
+  ],
+  "guild": {
+    "name": "Nova Guild Games",
+    "description": "Your Gateway to the Metaverse!",
+    "games": [
+      {"title": "Axie Infinity"},
+      {"title": "The Sandbox"},
+      {"title": "League Of Kingdoms"}
+    ],
+    "unique_features": [
+      {"type": "Market place", "url": "https://novaguild.io"},
+      {"type": "Launchpad", "url": "https://novaguild.io"},
+      {"type": "Platform", "url": "https://novaguild.io"}
+    ],
+    "languages": ["EN", "SPN", "RUS"],
+    "searching_for": ["scholars", "coach", "streamers", "testers", "video creators"],
+    "special_activities": ["marketing", "investment", "research", "testing"]
+  }
 }

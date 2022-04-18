@@ -4,13 +4,13 @@
   <h4>Game</h4>
   <h4>Portfolio</h4>
   <div class="select_arrows">
-    <img @click="leftArrow" src="../assets/arrow-left.svg" alt="arrowLeft">
-    <img @click="rightArrow" src="../assets/arrow-right.svg" alt="arrowRight">
+    <img @click="leftArrow" src="../../assets/arrow-left.svg" alt="arrowLeft">
+    <img @click="rightArrow" src="../../assets/arrow-right.svg" alt="arrowRight">
   </div>
 </div>
-  <div class="cards-list" :style="{ 'margin-left': '-' + (150 * currentSlideIndex) + 'px'}">
+<div class="cards-list" :style="{ 'margin-left': '-' + (150 * currentSlideIndex) + 'px'}">
     <q-card class="card" v-for="game in games" :key="game.id">
-      <img src="../assets/card-img.svg">
+      <img src="../../assets/card-img.svg">
       <q-card-section class="card-section">
         <div class="card-title">{{game.name}}</div>
         <div class="card-info" v-for="item in game.stats" :key="item.id">
@@ -66,8 +66,9 @@ export default {
       }
     },
     leftArrow () {
-      console.log(this.currentSlideIndex)
-      if (this.currentSlideIndex <= 1) {
+      if (this.currentSlideIndex >= this.games.length - 1) {
+        console.log(this.currentSlideIndex)
+      } else {
         this.currentSlideIndex++
       }
     }
@@ -106,7 +107,7 @@ export default {
         margin-left: 10px;
       }
     }
-  }
+}
 .cards-list{
     display: flex;
     transition: all ease .5s;

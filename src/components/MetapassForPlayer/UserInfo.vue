@@ -1,7 +1,7 @@
 <template>
   <div class="card" v-for="card in user" :key="card.id">
       <div class="card-image">
-          <img src="../assets/image.svg" alt="img">
+          <img src="../../assets/image.svg" alt="img">
       </div>
       <div class="card-user_name">
       <h4>{{card.nickname}}</h4>
@@ -25,7 +25,7 @@
           </span>
       </div>
       <div class="card-footer">
-          <img src="../assets/novaImg.svg" alt="nova">
+          <img src="../../assets/novaImg.svg" alt="nova">
       </div>
   </div>
 </template>

@@ -4,7 +4,9 @@
           <h4>meta<span>pass</span></h4>
       </div>
       <div class="header-exit">
+        <router-link to="/">
         <q-icon name="remove_circle_outline" color="red" size="40px" />
+        </router-link>
       </div>
   </div>
 </template>
@@ -21,6 +23,9 @@ export default {
   justify-content: space-between;
   align-items: center;
   padding: 0px 30px;
+  a{
+    text-decoration: none;
+  }
   &-title{
       h4{
         color: #FFFFFF;

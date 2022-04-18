@@ -4,7 +4,7 @@ const routes = [
     path: '/',
     component: () => import('layouts/MainLayout.vue'),
     children: [
-      { path: '', component: () => import('pages/IndexPage.vue') }
+      { path: '', component: () => import('src/pages/IndexPage.vue') }
     ]
   },
 
@@ -13,6 +13,14 @@ const routes = [
   {
     path: '/:catchAll(.*)*',
     component: () => import('pages/ErrorNotFound.vue')
+  },
+  {
+    path: '/player',
+    component: () => import('src/pages/MetaPassPlayer.vue')
+  },
+  {
+    path: '/guild',
+    component: () => import('src/pages/MetaPassGuild.vue')
   }
 ]
 

@@ -1,7 +1,8 @@
 import axios from 'axios'
 const state = {
   user: [],
-  games: []
+  games: [],
+  guild: {}
 }
 
 const getters = {
@@ -10,6 +11,9 @@ const getters = {
   },
   games: (state) => {
     return state.games
+  },
+  guild: (state) => {
+    return state.guild
   }
 }
 
@@ -25,6 +29,12 @@ const actions = {
       .then((res) => {
         commit('setGamesInfo', res.data)
       })
+  },
+  async getGuildInfo ({ commit }) {
+    await axios.get('http://localhost:3000/guild')
+      .then((res) => {
+        commit('setGuildInfo', res.data)
+      })
   }
 }
 
@@ -34,6 +44,9 @@ const mutations = {
   },
   setGamesInfo (state, data) {
     state.games = data
+  },
+  setGuildInfo (state, data) {
+    state.guild = data
   }
 }
 

@@ -13,7 +13,6 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-#app{
-  background: linear-gradient(180deg, #1A1C1D 0%, #11151D 100%) !important;
-}
+// #app{
+// }
 </style>

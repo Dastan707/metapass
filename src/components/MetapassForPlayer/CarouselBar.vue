@@ -6,7 +6,7 @@
       :autoplay="autoplay"
       class="carousel"
     >
-      <q-carousel-slide :name="1" img-src="../assets/carousel.jpg" />
+      <q-carousel-slide :name="1" img-src="../../assets/carousel.jpg" />
       <q-carousel-slide :name="2" img-src="https://cdn.quasar.dev/img/parallax1.jpg" />
       <q-carousel-slide :name="3" img-src="https://cdn.quasar.dev/img/mountains.jpg" />
 
@@ -73,9 +73,10 @@ export default {
     }
 }
 .active{
-  width: 90px;
+  width: 120px;
   height: 5px;
   background-color: #249BB6;
   border-radius: 10px;
+  filter: drop-shadow(0 0 0.40rem #249BB6);
 }
 </style>
