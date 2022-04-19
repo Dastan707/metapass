@@ -133,7 +133,7 @@ export default {
                 font-family: $stellar-font-family;
                 font-style: normal;
                 font-weight: 500;
-                font-size: 15px;
+                font-size: 14px;
                 margin-right: 10px;
                 display: flex;
                 justify-content: center;
@@ -151,7 +151,7 @@ export default {
                 font-family: $stellar-font-family;
                 font-style: normal;
                 font-weight: 500;
-                font-size: 15px;
+                font-size: 14px;
                 margin: 0px 10px 15px 0px;
                 display: flex;
                 justify-content: center;
@@ -180,7 +180,7 @@ export default {
                 font-family: $stellar-font-family;
                 font-style: normal;
                 font-weight: 500;
-                font-size: 15px;
+                font-size: 14px;
                 display: flex;
                 justify-content: center;
                 align-items: center;
