@@ -77,14 +77,14 @@ export default {
         align-items: center;
         padding: 4px 5px 4px 5px;
         p{
-            width: 120px;
+            width: 125px;
             height: 30px;
             background: #249BB6;
             border-radius: 5px;
-            font-size: 12px;
+            font-size: 13px;
             font-family: $aven-font-family;
             font-style: normal;
-            font-weight: 400;
+            font-weight: 500;
             color: #fff;
             text-transform: uppercase;
             text-align: center;
