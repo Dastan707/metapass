@@ -69,7 +69,7 @@ export default {
   width: 170px;
   height: 450px;
   z-index: 1;
-  left: 460px;
+  left: 440px;
   top: 510px;
 }
 .main{
