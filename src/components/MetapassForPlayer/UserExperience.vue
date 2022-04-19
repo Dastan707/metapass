@@ -8,7 +8,7 @@
     <span class="experience-block_title">P2e experience</span>
     <div class="experience-card" v-for="exp in p2e_experience" :key="exp.id">
         <img src="../../assets/expImg.svg" alt="img">
-        <p class="experience-card_time">{{exp.playing_time}}</p>
+        <div class="experience-card_time">{{exp.playing_time}}</div>
     </div>
   </div>
 </div>
@@ -76,7 +76,7 @@ export default {
         justify-content: space-between;
         align-items: center;
         padding: 4px 5px 4px 5px;
-        p{
+        div{
             width: 125px;
             height: 30px;
             background: #249BB6;

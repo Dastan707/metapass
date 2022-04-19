@@ -29,20 +29,20 @@
             />
             <p>{{item.title}}</p>
             </div>
-            <p
+            <div
               class="card-info_stats"
               v-if="item.status == 'positive'"
               v-bind:class="'positive'"
             >
               {{item.num}}
-            </p>
-            <p
+            </div>
+            <div
               class="card-info_stats"
               v-else-if="item.status == 'negative'"
               v-bind:class="'negative'"
             >
               {{item.num}}
-            </p>
+            </div>
         </div>
       </q-card-section>
     </q-card>
@@ -138,7 +138,9 @@ export default {
         border-radius: 5px;
         text-transform: uppercase;
         text-align: center;
-        padding: 3px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         font-size: 18px;
         font-weight: 400;
     }
@@ -167,7 +169,10 @@ export default {
             background-color: #1E2026;
             border-radius: 5px;
             text-align: right;
-            padding: 2px 4px 2px 0px;
+            padding-right: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
         }
         .negative{
             border: 1px solid #BC1F6F;
