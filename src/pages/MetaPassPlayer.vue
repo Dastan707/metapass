@@ -80,7 +80,7 @@ export default {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    padding: 0px 25px 0px 35px;
+    padding: 0px 15px 0px 35px;
     background: linear-gradient(180deg, #1A1C1D 0%, #11151D 100%);
     z-index: 2;
     overflow: hidden;
