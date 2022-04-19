@@ -1,8 +1,8 @@
 <template>
 <div>
 <div class="select">
-  <h4>Game</h4>
-  <h4>Portfolio</h4>
+  <h4>Currently</h4>
+  <h4>Playing</h4>
   <div class="select_arrows">
     <img @click="leftArrow" src="../../assets/arrow-left.svg" alt="arrowLeft">
     <img @click="rightArrow" src="../../assets/arrow-right.svg" alt="arrowRight">
@@ -56,17 +56,17 @@ export default {
   name: 'GameCard',
   data () {
     return {
-      currentSlideIndex: 0
+      currentSlideIndex: 1
     }
   },
   methods: {
-    rightArrow () {
+    leftArrow () {
       if (this.currentSlideIndex > 0) {
         this.currentSlideIndex--
       }
     },
-    leftArrow () {
-      if (this.currentSlideIndex >= this.games.length - 1) {
+    rightArrow () {
+      if (this.currentSlideIndex > this.games.length) {
         console.log(this.currentSlideIndex)
       } else {
         this.currentSlideIndex++
@@ -103,7 +103,7 @@ export default {
       display: flex;
       align-items: center;
       img{
-        width: 25px;
+        width: 20px;
         margin-left: 10px;
       }
     }

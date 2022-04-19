@@ -20,6 +20,7 @@ export default {
     await this.$store.dispatch('getUserInfo')
     await this.$store.dispatch('getGamesInfo')
     await this.$store.dispatch('getGuildInfo')
+    await this.$store.dispatch('getExperienceInfo')
   }
 }
 </script>

@@ -2,11 +2,17 @@
   "user": [
       {
         "nickname": "Player_001",
+        "discord_nickname": "WhaleMC#0000",
+        "devices": ["PC", "Android"],
         "description": "Player short bio info Lorem ipsum dolor sit, amet consectetur adipisicing elit. Impedit, atque!",
         "skills": ["Player", "Coach", "NFT artist"],
-        "state": ["In search for game", "Rents out of NFT", "Rents NFT"],
+        "state": ["Renting out NFT", "Coach"],
         "guild": "Nova Guild Games"
       }
+  ],
+  "experience": [
+    {"game": "Axie Infinity", "img": "img", "playing_time": "2 months played"},
+    {"game": "The Sandbox", "img": "img", "playing_time": "2 years played"}
   ],
   "games": [
     {

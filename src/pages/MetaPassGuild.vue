@@ -34,6 +34,8 @@
      <div class="main-games_list">
       <GamesList :games="guild.games" />
      </div>
+     <div class="main-footer">
+     <div>
      <div class="main-features">
        <div class="main-features_title">
         <h4>Unique</h4>
@@ -47,10 +49,33 @@
      <div class="main-features_list">
        <UniqueFeatures :features="guild.unique_features" />
      </div>
+     </div>
+     <div class="main-footer_right">
      <div class="main-blockchain">
        <h4>Block<span>chain</span></h4>
-       <div class="main-blockchain_list"></div>
+       <div class="main-blockchain_list">
+         <img src="../assets/blockchainImage.png" alt="">
+         <img src="../assets/blockchainImage2.png" alt="">
+         <img src="../assets/blockchainImage3.png" alt="">
+       </div>
      </div>
+     <div class="main-listing">
+       <h4>Listing</h4>
+       <div class="main-listing_images">
+         <div>
+         <img src="../assets/image9.svg" alt="">
+         </div>
+         <div>
+         <img src="../assets/image10.svg" alt="">
+         </div>
+       </div>
+     </div>
+     <div class="main-ticker">
+       <span>TOKEN TICKER</span>
+       <span class="ticker-button">$ NGG</span>
+     </div>
+     </div>
+    </div>
    </div>
   </div>
 </template>
@@ -58,9 +83,10 @@
 <script>
 import HeaderTitle from 'src/components/HeaderTitle.vue'
 import CarouselBanner from 'src/components/MetapassForGuild/CarouselBanner.vue'
-import { mapGetters } from 'vuex'
 import GamesList from 'src/components/MetapassForGuild/GamesList.vue'
 import UniqueFeatures from 'src/components/MetapassForGuild/UniqueFeatures.vue'
+import { mapGetters } from 'vuex'
+
 export default {
   name: 'MetaPassGuild',
   components: {
@@ -159,6 +185,10 @@ export default {
       filter: drop-shadow(0 0 0.75rem #BC1F6F);
       margin-left: 7px;
     }
+    &-footer{
+      display: flex;
+      width: 850px;
+    }
     &-features{
       width: 300px;
       display: flex;
@@ -173,7 +203,12 @@ export default {
         margin-top: 10px;
       }
     }
+    &-footer_right{
+      display: flex;
+      flex-direction: column;
+    }
     &-blockchain{
+      margin-left: 30px;
       h4{
         color: #fff;
       }
@@ -182,6 +217,67 @@ export default {
         filter: drop-shadow(0 0 0.45rem #BC1F6F);
         font-weight: 100;
       }
+      &_list{
+        width: 280px;
+        height: 39px;
+        background: #1E2026;
+        box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.15);
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        margin-top: 20px;
+        img{
+          width: 20px;
+          height: 20px;
+          margin: 0px 7px 0px 5px;
+        }
+      }
     }
+      &-listing{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 20px 0px 0px 30px;
+        &_images{
+          display: flex;
+          margin-top: 10px;
+          img{
+            margin-left: 12px;
+          }
+        }
+        h4{
+          color: #BC1F6F;
+          filter: drop-shadow(0 0 0.45rem #BC1F6F);
+          font-weight: 200;
+        }
+      }
+      &-ticker{
+        width: 290px;
+        height: 40px;
+        background: #1E2026;
+        box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.15);
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 20px 0px 0px 30px;
+        padding: 2px 10px 0px 10px;
+        span{
+          color: #fff;
+          font-family: 'Stellar';
+          font-style: normal;
+          font-weight: 400;
+          font-size: 15px;
+        }
+        .ticker-button{
+          width: 95px;
+          height: 28px;
+          background: #249BB6;
+          border-radius: 5px;
+          text-align: center;
+          padding-top: 4px;
+          font-size: 13px;
+        }
+      }
 }
 </style>

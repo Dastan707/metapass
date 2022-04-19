@@ -2,7 +2,14 @@ import axios from 'axios'
 const state = {
   user: [],
   games: [],
-  guild: {}
+  guild: {},
+  p2e_experience: [],
+  userNft: [
+    { name: 'nftName', img: 'imgUrl' },
+    { name: 'nftName', img: 'imgUrl' },
+    { name: 'nftName', img: 'imgUrl' },
+    { name: 'nftName', img: 'imgUrl' }
+  ]
 }
 
 const getters = {
@@ -14,6 +21,12 @@ const getters = {
   },
   guild: (state) => {
     return state.guild
+  },
+  p2e_experience: (state) => {
+    return state.p2e_experience
+  },
+  userNft: (state) => {
+    return state.userNft
   }
 }
 
@@ -35,6 +48,13 @@ const actions = {
       .then((res) => {
         commit('setGuildInfo', res.data)
       })
+  },
+  async getExperienceInfo ({ commit }) {
+    await axios.get('http://localhost:3000/experience')
+      .then((res) => {
+        console.log(res.data)
+        commit('setExperienceInfo', res.data)
+      })
   }
 }
 
@@ -47,6 +67,9 @@ const mutations = {
   },
   setGuildInfo (state, data) {
     state.guild = data
+  },
+  setExperienceInfo (state, data) {
+    state.p2e_experience = data
   }
 }
 
